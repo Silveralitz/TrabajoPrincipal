@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FLOMAT - Servicios Agrícolas</title>
+  <link rel="stylesheet" href="estilos.css" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+<a href="https://wa.me/598099063745" class="wsp-float" target="_blank" title="Escribinos por WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+</a>
+
+<body>
+
+  <header>
+    <h1>FLOMAT</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="fade-in">
+    <h2>Bienvenidos al campo del futuro</h2>
+    <p>En <strong>FLOMAT</strong> ofrecemos servicios agrícolas con maquinaria de punta, experiencia familiar y amor por la tierra.</p>
+  </section>
+
+  <section id="servicios" class="card fade-in servicios-flex">
+  <div class="texto-servicios">
+    <h2><i data-lucide="tractor"></i> Servicios Agrícolas</h2>
+    <ul>
+      <li>🚜 Siembra directa</li>
+      <li>🌱 Fertilización y pulverización</li>
+      <li>🌾 Embolsado de granos</li>
+      <li>🛠️ Preparación de suelos</li>
+      <li>🚛 Transporte y logística</li>
+    </ul>
+  </div>
+  <div class="imagen-servicios">
+    <img src="Foto 1.jpg" alt="Tractor trabajando en el campo" class="img-retro" />
+    <img src="Foto 3.jpg" alt="Otra maquinaria agrícola" class="img-small" />
+  </div>
+</section>
+
+ <section id="servicios-viales" class="card fade-in servicios-flex">
+  <div class="texto-servicios">
+    <h2><i data-lucide="excavator"></i> Servicios Viales</h2>
+    <ul>
+      <li>Construcción y mantenimiento de caminos</li>
+      <li>Reparación de baches</li>
+      <li>Transporte y logística</li>
+      <li>Excavación y movimiento de tierra</li>
+      <li>Puentes y alcantarillas</li>
+    </ul>
+  </div>
+  <div class="imagen-servicios">
+  <img src="retrocargadoras-580-n-case.jpeg" alt="Maquinaria vial trabajando" class="img-retro" />
+  <img src="Foto 2.jpg" alt="Otra maquinaria vial" class="img-small" />
+</div>
+</section>
+
+  <section id="nosotros" class="fade-in">
+  <h2><i data-lucide="users"></i> Sobre Nosotros</h2>
+  <div style="display: flex; align-items: center; gap: 30px;">
+    <p style="flex: 1;">
+      Empresa familiar con raíces en el agro Uruguayo. Nuestro compromiso es con el productor, la calidad del servicio y el futuro del campo.
+    </p>
+    <img src="Foto 4.jpg" alt="Foto familiar FLOMAT" class="img-nosotros" style="max-width: 180px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" />
+  </div>
+</section>
+
+  <section id="contacto" class="card fade-in">
+    <h2><i data-lucide="phone"></i> Contacto</h2>
+    <p>📱 WhatsApp: <a href="https://wa.me/598099063745" target="_blank">+598 099063745</a></p>
+    <p>📧 Email: nataliaypm@hotmail.com</p>
+    
+    <a href="https://wa.me/598099063745" class="btn-wsp" target="_blank">¡Escribinos por WhatsApp!</a>
+  </section>
+
+  <footer>
+  <p>© <span id="anio"></span> FLOMAT - Servicios Agrícolas</p>
+</footer>
+
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const secciones = document.querySelectorAll("section");
+
+    const mostrarSeccion = () => {
+      secciones.forEach(sec => {
+        const pos = sec.getBoundingClientRect().top;
+        const altoPantalla = window.innerHeight;
+
+        if (pos < altoPantalla - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", mostrarSeccion);
+    mostrarSeccion(); // para que aparezca lo primero sin scrollear
+  });
+</script>
+
+</body>
+</html>
+
